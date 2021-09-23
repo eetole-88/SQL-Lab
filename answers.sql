@@ -26,11 +26,11 @@ SELECT AVG(quantity), MAX(quantity), MIN(quantity) FROM order_details GROUP BY o
 SELECT customer_id FROM orders WHERE order_id='10290';
 --#14
 --INNER JOIN
-SELECT * FROM orders INNER JOIN customers ON orders.order_id=order_id;
+SELECT * FROM orders INNER JOIN customers ON orders.customer_id=customers.customer_id;
 --LEFT JOIN
-SELECT * FROM orders LEFT JOIN customers ON orders.order_id=order_id;
+SELECT * FROM orders LEFT JOIN customers ON orders.customer_id=customers.customer_id;
 --RIGHT JOIN
-SELECT * FROM orders RIGHT JOIN customers ON orders.order_id=order_id;
+SELECT * FROM orders RIGHT JOIN customers ON orders.customer_id=customers.customer_id;
 --#15
 SELECT orders.ship_city, orders.ship_country FROM orders
 INNER JOIN employees ON orders.employee_id=employees.employee_id
